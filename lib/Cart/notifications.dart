@@ -57,10 +57,10 @@ class NotificationScreen extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.only(
-                  top: 5.0,
-                  bottom: 5.0,
-                  //   right: 10.0,
-                  left: 10.0,
+                  top: 10.0,
+                  left: 5.0,
+                  bottom: 8.0,
+                  right: 3.0,
                 ),
                 height: 90.0,
                 width: double.infinity,
@@ -70,10 +70,11 @@ class NotificationScreen extends StatelessWidget {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 65.0,
-                      width: 100.0,
+                      height: 70.0,
+                      width: 80.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.0),
                         color: thirdColor.withOpacity(0.4),
@@ -84,174 +85,186 @@ class NotificationScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15.0,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const Text(
+                          'We Have Now\nProducts With Offers',
+                          style: TextStyle(color: primaryColor),
+                        ),
+                        Row(
+                          children: const [
+                            Text('\$364.95'),
+                            SizedBox(width: 10.0),
+                            Text('\$260.00'),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Text('7 min ago'),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 10.0,
+                  left: 5.0,
+                  bottom: 8.0,
+                  right: 3.0,
+                ),
+                height: 90.0,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: whiteColor,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 70.0,
+                      width: 80.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: thirdColor.withOpacity(0.4),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          Text(
-                            'Nike Air Max 270 Essential',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text('\$74.95'),
-                        ],
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/nike-zoom-winflo-3-831561-001-mens-running-shoes-11550187236tiyyje6l87_prev_ui 1.png',
+                          width: 70.0,
+                        ),
                       ),
-                    )
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const Text(
+                          'We Have Now\nProducts With Offers',
+                          style: TextStyle(color: primaryColor),
+                        ),
+                        Row(
+                          children: const [
+                            Text('\$364.95'),
+                            SizedBox(width: 10.0),
+                            Text('\$260.00'),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Text('40 min ago'),
+                  ],
+                ),
+              ),
+              const Text('Yestarday'),
+              const SizedBox(height: 8.0),
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 10.0,
+                  left: 5.0,
+                  bottom: 8.0,
+                  right: 3.0,
+                ),
+                height: 90.0,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: whiteColor,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 70.0,
+                      width: 80.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: thirdColor.withOpacity(0.4),
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/pngaaa.png',
+                        ),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const Text(
+                          'We Have Now\nProducts With Offers',
+                          style: TextStyle(color: primaryColor),
+                        ),
+                        Row(
+                          children: const [
+                            Text('\$364.95'),
+                            SizedBox(width: 10.0),
+                            Text('\$260.00'),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Text('40 min ago'),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 10.0,
+                  left: 5.0,
+                  bottom: 8.0,
+                  right: 3.0,
+                ),
+                height: 90.0,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: whiteColor,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 70.0,
+                      width: 80.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: thirdColor.withOpacity(0.4),
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/PngItem_5550642 (2) 2.png',
+                        ),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const Text(
+                          'We Have Now\nProducts With Offers',
+                          style: TextStyle(color: primaryColor),
+                        ),
+                        Row(
+                          children: const [
+                            Text('\$364.95'),
+                            SizedBox(width: 10.0),
+                            Text('\$260.00'),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Text('40 min ago'),
                   ],
                 ),
               ),
               //
-              const SizedBox(height: 10.0),
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 8.0,
-                  bottom: 8.0,
-                  right: 10.0,
-                  left: 10.0,
-                ),
-                height: 100.0,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: whiteColor,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 65.0,
-                      width: 100.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        color: thirdColor.withOpacity(0.4),
-                      ),
-                      child: Center(
-                        child: Image.asset(
-                          'assets/images/nike-ah8050110-air_max_270-1-e_prev_ui 2.png',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15.0,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          Text(
-                            'Nike Air Max 270 Essential',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text('\$74.95'),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                child: Text('Yestarday'),
-              ),
-
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 8.0,
-                  bottom: 8.0,
-                  right: 10.0,
-                  left: 10.0,
-                ),
-                height: 100.0,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: whiteColor,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 65.0,
-                      width: 100.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        color: thirdColor.withOpacity(0.4),
-                      ),
-                      child: Center(
-                        child: Image.asset(
-                          'assets/images/nike-ah8050110-air_max_270-1-e_prev_ui 2.png',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15.0,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          Text(
-                            'Nike Air Max 270 Essential',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text('\$74.95'),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(height: 10.0),
-              Container(
-                padding: const EdgeInsets.only(
-                  top: 8.0,
-                  bottom: 8.0,
-                  right: 10.0,
-                  left: 10.0,
-                ),
-                height: 100.0,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: whiteColor,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 65.0,
-                      width: 100.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        color: thirdColor.withOpacity(0.4),
-                      ),
-                      child: Center(
-                        child: Image.asset(
-                          'assets/images/nike-ah8050110-air_max_270-1-e_prev_ui 2.png',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15.0,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          Text(
-                            'Nike Air Max 270 Essential',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text('\$74.95'),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
             ],
           ),
         ),

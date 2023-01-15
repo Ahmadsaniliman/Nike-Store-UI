@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nike_store_ui/Cart/notifications.dart';
+import 'package:nike_store_ui/HomePage/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const NotificationScreen(),
+      home: const HomeScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

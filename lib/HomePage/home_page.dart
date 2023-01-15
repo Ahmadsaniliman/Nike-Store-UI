@@ -1,5 +1,7 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_store_ui/Constants/colors.dart';
+import 'package:nike_store_ui/HomePage/drawer.dart';
 import 'package:nike_store_ui/Model/model.dart';
 // import 'package:nike_sneaker_store_app/';
 
@@ -24,17 +26,18 @@ class _HomeScreenState extends State<HomeScreen> {
     ];
     return Scaffold(
       backgroundColor: secondWhiteColor,
-//     bottomNavigationBar: CurvedNavigationBar(
-//     backgroundColor: Colors.blueAccent,
-//     items: const [
-//       Icon(Icons.add, size: 30),
-//       Icon(Icons.list, size: 30),
-//       Icon(Icons.compare_arrows, size: 30),
-//     ],
-//     onTap: (index) {
-//       //Handle button tap
-//     },
-//   ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.blueAccent,
+        items: const [
+          Icon(Icons.add, size: 30),
+          Icon(Icons.list, size: 30),
+          Icon(Icons.compare_arrows, size: 30),
+        ],
+        onTap: (index) {
+          //Handle button tap
+        },
+      ),
+      drawer: const Drawwer(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -44,7 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: Column(
             children: [
-              Image.asset('assets/images/Group 1000000742.png'),
+              GestureDetector(
+                  onTap: () {},
+                  child: Image.asset('assets/images/Group 1000000742.png')),
               Padding(
                 padding: const EdgeInsets.only(
                   top: 20.0,
