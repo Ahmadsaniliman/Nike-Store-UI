@@ -38,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
       drawer: const Drawwer(),
+      //   appBar : AppBar(leading: Drawwer()),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -48,7 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    const Drawwer();
+                  },
                   child: Image.asset('assets/images/Group 1000000742.png')),
               Padding(
                 padding: const EdgeInsets.only(
