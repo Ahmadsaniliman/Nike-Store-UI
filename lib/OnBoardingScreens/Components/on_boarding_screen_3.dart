@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_store_ui/Constants/colors.dart';
+import 'package:nike_store_ui/Constants/routes.dart';
 import 'package:nike_store_ui/OnBoardingScreens/on_borading_screen.dart';
 
 class OnBoardingScreen3 extends StatefulWidget {
@@ -12,6 +13,7 @@ class OnBoardingScreen3 extends StatefulWidget {
 class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
   @override
   Widget build(BuildContext context) {
+    int _index = 2;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -82,15 +84,25 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
                       left: 15.0,
                       right: 15.0,
                     ),
-                    child: Container(
-                      height: 50.0,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: secondWhiteColor,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: const Center(
-                        child: Text('Next'),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(
+                          homeScreenRoute,
+                        );
+                        setState(() {
+                          ChangeRoller(index: _index);
+                        });
+                      },
+                      child: Container(
+                        height: 50.0,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: secondWhiteColor,
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: const Center(
+                          child: Text('Next'),
+                        ),
                       ),
                     ),
                   ),

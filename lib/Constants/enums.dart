@@ -1,0 +1,4 @@
+enum NavbarEnums {
+  home,
+  favourite,
+}

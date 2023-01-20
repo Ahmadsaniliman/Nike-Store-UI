@@ -9,3 +9,4 @@ const onBoardingScreenThreeRoute = '//';
 const searchRoute = '/searchScreen/';
 const favouriteRoute = '/favouriteScreen/';
 const profileRoute = '/profileScreen/';
+const detailsRoute = '/detailsPage/';

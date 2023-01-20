@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_store_ui/Constants/colors.dart';
+import 'package:nike_store_ui/Constants/routes.dart';
 import 'package:nike_store_ui/HomePage/drawer.dart';
 import 'package:nike_store_ui/Model/model.dart';
 // import 'package:nike_sneaker_store_app/';
@@ -267,63 +268,70 @@ class PopularProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 15.0),
-      padding: const EdgeInsets.only(
-        top: 10.0,
-        // bottom: 10,
-        left: 10.0,
-      ),
-      height: 180.0,
-      width: 155.0,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Stack(
-        children: [
-          Image.asset(
-            'assets/icons/Vector (19).png',
-          ),
-          Positioned(
-            // top: 20.0,
-            child: Image.asset(product.image),
-          ),
-          Positioned(
-            bottom: 0,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  product.name,
-                  style: const TextStyle(
-                    color: Colors.blue,
-                  ),
-                ),
-                const SizedBox(height: 05.0),
-                Text(product.title),
-                Row(
-                  children: [
-                    Text(product.price),
-                    const SizedBox(width: 60.0),
-                    Container(
-                      height: 30.0,
-                      width: 30.0,
-                      decoration: const BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
-                        ),
-                      ),
-                      child: const Icon(Icons.add, color: Colors.white),
-                    ),
-                  ],
-                ),
-              ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(
+          detailsRoute,
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.only(right: 15.0),
+        padding: const EdgeInsets.only(
+          top: 10.0,
+          // bottom: 10,
+          left: 10.0,
+        ),
+        height: 180.0,
+        width: 155.0,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/icons/Vector (19).png',
             ),
-          ),
-        ],
+            Positioned(
+              // top: 20.0,
+              child: Image.asset(product.image),
+            ),
+            Positioned(
+              bottom: 0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.name,
+                    style: const TextStyle(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  const SizedBox(height: 05.0),
+                  Text(product.title),
+                  Row(
+                    children: [
+                      Text(product.price),
+                      const SizedBox(width: 60.0),
+                      Container(
+                        height: 30.0,
+                        width: 30.0,
+                        decoration: const BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            bottomRight: Radius.circular(10.0),
+                          ),
+                        ),
+                        child: const Icon(Icons.add, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

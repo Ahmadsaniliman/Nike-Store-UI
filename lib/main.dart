@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_store_ui/Constants/routes.dart';
+import 'package:nike_store_ui/Details/details.dart';
 import 'package:nike_store_ui/Favourite/favourite.dart';
 import 'package:nike_store_ui/ForgotPassword/forgot_password.dart';
 import 'package:nike_store_ui/HomePage/home_page.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         searchRoute: (context) => const SearchScreen(),
         favouriteRoute: (context) => const FavouriteScreen(),
         profileRoute: (context) => const ProfileScreen(),
+        detailsRoute: (context) => const DetailsPage(),
       },
     );
   }
