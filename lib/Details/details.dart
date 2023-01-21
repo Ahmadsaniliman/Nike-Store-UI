@@ -53,7 +53,7 @@ class DetailsPage extends StatelessWidget {
                       color: thirdColor.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
-                    child: Image.asset('assets/icons/Vector 175 (Stroke).png'),
+                    child: Image.asset('assets/images/Frame 31.png'),
                   ),
                 ),
               ],
@@ -182,15 +182,22 @@ class DetailsPage extends StatelessWidget {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Icon(
+                        children: [
+                          const Icon(
                             Icons.add_shopping_cart,
                             color: Colors.white,
                           ),
-                          Text(
-                            'Add To Cart',
-                            style: TextStyle(
-                              color: Colors.white,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).pushNamed(
+                                cartRoute,
+                              );
+                            },
+                            child: const Text(
+                              'Add To Cart',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ],

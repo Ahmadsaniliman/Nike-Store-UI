@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nike_store_ui/Cart/cart.dart';
+import 'package:nike_store_ui/Cart/my_cart.dart';
+import 'package:nike_store_ui/Cart/notifications.dart';
 import 'package:nike_store_ui/Constants/colors.dart';
 import 'package:nike_store_ui/Constants/routes.dart';
 import 'package:nike_store_ui/Details/details.dart';
@@ -11,6 +14,7 @@ import 'package:nike_store_ui/OnBoardingScreens/Components/on_boarding_screen_3.
 import 'package:nike_store_ui/OnBoardingScreens/on_borading_screen.dart';
 import 'package:nike_store_ui/Otp/otp_screen.dart';
 import 'package:nike_store_ui/Profile/profile.dart';
+import 'package:nike_store_ui/Profile/profile_data.dart';
 import 'package:nike_store_ui/Register/register.dart';
 import 'package:nike_store_ui/SignIn/sign_in.dart';
 
@@ -29,6 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(),
       home: const HomePage(),
       routes: {
+        notificationRoute: (context) => const NotificationScreen(),
         homeScreenRoute: (context) => const HomeScreen(),
         registerRoute: (context) => const RegisterScreen(),
         loginRoute: (context) => const SignInScreen(),
@@ -41,8 +46,11 @@ class MyApp extends StatelessWidget {
         onBoardingScreenThreeRoute: (context) => const OnBoardingScreen3(),
         searchRoute: (context) => const SearchScreen(),
         favouriteRoute: (context) => const FavouriteScreen(),
-        profileRoute: (context) => const ProfileScreen(),
+        profileRoute: (context) => const ProfileScreen2(),
+        profile1Route: (context) => const ProfileScreen(),
         detailsRoute: (context) => const DetailsPage(),
+        cartRoute: (context) => const CartScreen(),
+        checkOutRoute: (context) => const MyCartScreen(),
       },
     );
   }

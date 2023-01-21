@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_store_ui/Constants/colors.dart';
+import 'package:nike_store_ui/Constants/routes.dart';
 
 class MyCartScreen extends StatelessWidget {
   const MyCartScreen({Key? key}) : super(key: key);
@@ -19,6 +20,11 @@ class MyCartScreen extends StatelessWidget {
               Row(
                 children: [
                   GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(
+                        cartRoute,
+                      );
+                    },
                     child: Container(
                       height: 40.0,
                       width: 40.0,
@@ -254,7 +260,9 @@ class MyCartScreen extends StatelessWidget {
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        Navigator.of(context).pop();
+                                        Navigator.of(context).pushNamed(
+                                          homeScreenRoute,
+                                        );
                                       },
                                       child: Container(
                                         height: 50.0,

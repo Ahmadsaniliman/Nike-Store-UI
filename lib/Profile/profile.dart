@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_store_ui/Constants/colors.dart';
+import 'package:nike_store_ui/Constants/routes.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -18,6 +19,11 @@ class ProfileScreen extends StatelessWidget {
               Row(
                 children: [
                   GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(
+                        homeScreenRoute,
+                      );
+                    },
                     child: Container(
                       height: 40.0,
                       width: 40.0,
@@ -49,11 +55,17 @@ class ProfileScreen extends StatelessWidget {
                   width: 100.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.0),
-                    color: primaryColor,
+                    // image: const DecorationImage(
+                    //   image: AssetImage('assets/images/liman.jpg'),
+                    // ),
                   ),
                   child: Stack(
-                    fit: StackFit.expand,
+                    // fit: StackFit.loose,
                     children: [
+                      Image.asset(
+                        'assets/images/liman.jpg',
+                        fit: BoxFit.cover,
+                      ),
                       Positioned(
                         bottom: 0,
                         right: 0,

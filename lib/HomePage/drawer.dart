@@ -27,9 +27,10 @@ class Drawwer extends StatelessWidget {
                     height: 100.0,
                     width: 100.0,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.0),
+                      borderRadius: BorderRadius.circular(40.0),
                       color: whiteColor,
                     ),
+                    child: Image.asset('assets/images/liman.jpg'),
                   ),
                   const Text(
                     'Ahmad Sani Liman',

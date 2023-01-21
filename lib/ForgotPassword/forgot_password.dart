@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_store_ui/Constants/routes.dart';
 
 import '../Constants/colors.dart';
 
@@ -10,7 +11,7 @@ class ForgotPasswordScreen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(
-          top: 25.0,
+          top: 15.0,
           left: 20.0,
           right: 20.0,
         ),
@@ -19,6 +20,11 @@ class ForgotPasswordScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(
+                    loginRoute,
+                  );
+                },
                 child: Container(
                   height: 40.0,
                   width: 40.0,
@@ -79,7 +85,41 @@ class ForgotPasswordScreen extends StatelessWidget {
 
               GestureDetector(
                 onTap: () async {
-                  //   await AboutDialog();
+                  showDialog(
+                    barrierDismissible: true,
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      content: Container(
+                        padding: const EdgeInsets.only(top: 10.0),
+                        height: 150.0,
+                        width: double.infinity,
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 50.0,
+                              width: 50.0,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40.0),
+                                color: primaryColor,
+                              ),
+                              child: const Icon(Icons.email, color: whiteColor),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 15.0, bottom: 8.0),
+                              child: Text(
+                                'Check Your Email',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            const Text(
+                              'We Have Send Password Recovery Code In Your Email',
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
                 },
                 child: Container(
                   height: 50.0,
@@ -89,7 +129,10 @@ class ForgotPasswordScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: const Center(
-                    child: Text('Reset Password'),
+                    child: Text(
+                      'Reset Password',
+                      style: TextStyle(color: whiteColor),
+                    ),
                   ),
                 ),
               )

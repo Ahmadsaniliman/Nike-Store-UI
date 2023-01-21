@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_store_ui/Constants/routes.dart';
 
 import '../Constants/colors.dart';
 
@@ -10,7 +11,7 @@ class OtperificationScreen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(
-          top: 25.0,
+          top: 15.0,
           left: 20.0,
           right: 20.0,
         ),
@@ -19,6 +20,11 @@ class OtperificationScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(
+                    loginRoute,
+                  );
+                },
                 child: Container(
                   height: 40.0,
                   width: 40.0,
@@ -60,21 +66,26 @@ class OtperificationScreen extends StatelessWidget {
 
               Padding(
                 padding: const EdgeInsets.only(top: 30.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 50.0,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: const Center(
-                        child: Text('Verify'),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                      homeScreenRoute,
+                    );
+                  },
+                  child: Container(
+                    height: 50.0,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Verify',
+                        style: TextStyle(color: whiteColor),
                       ),
                     ),
-                  ],
+                  ),
                 ),
               )
             ],

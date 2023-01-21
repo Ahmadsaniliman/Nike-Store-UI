@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_store_ui/Constants/colors.dart';
+import 'package:nike_store_ui/Constants/routes.dart';
 
 class ProfileScreen2 extends StatelessWidget {
   const ProfileScreen2({Key? key}) : super(key: key);
@@ -19,6 +20,9 @@ class ProfileScreen2 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(profile1Route);
+                    },
                     child: Container(
                       height: 40.0,
                       width: 40.0,
@@ -36,10 +40,15 @@ class ProfileScreen2 extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Text(
-                    'Done',
-                    style: TextStyle(
-                      color: primaryColor,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(profile1Route);
+                    },
+                    child: const Text(
+                      'Done',
+                      style: TextStyle(
+                        color: primaryColor,
+                      ),
                     ),
                   ),
                 ],
@@ -53,9 +62,13 @@ class ProfileScreen2 extends StatelessWidget {
                 child: Container(
                   height: 100.0,
                   width: 100.0,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40.0),
                     color: primaryColor,
+                  ),
+                  child: Image.asset(
+                    'assets/images/Rectangle 382.png',
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

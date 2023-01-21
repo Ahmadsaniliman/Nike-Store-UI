@@ -1,6 +1,6 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_store_ui/Constants/colors.dart';
+import 'package:nike_store_ui/Constants/enums.dart';
 import 'package:nike_store_ui/Constants/routes.dart';
 import 'package:nike_store_ui/HomePage/drawer.dart';
 import 'package:nike_store_ui/Model/model.dart';
@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //      int _page = 0;
 //   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   int selectedOne = 0;
+  int selectedNav = 0;
   @override
   Widget build(BuildContext context) {
     final List<String> textCategory = [
@@ -27,16 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
     ];
     return Scaffold(
       backgroundColor: secondWhiteColor,
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
-        items: const [
-          Icon(Icons.add, size: 30),
-          Icon(Icons.list, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
-        ],
-        onTap: (index) {
-          //Handle button tap
-        },
+      bottomNavigationBar: const NavigatorBar(
+        navBar: NavbarEnums.home,
       ),
       drawer: const Drawwer(),
       //   appBar : AppBar(leading: Drawwer()),
@@ -254,6 +247,81 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class NavigatorBar extends StatelessWidget {
+  const NavigatorBar({
+    Key? key,
+    required this.navBar,
+  }) : super(key: key);
+  final NavbarEnums navBar;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      height: 78.0,
+      width: double.infinity,
+      color: whiteColor,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                homeScreenRoute,
+              );
+            },
+            child: Icon(
+              Icons.home_filled,
+              size: 30.0,
+              color: navBar == NavbarEnums.home ? Colors.green : Colors.black26,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                favouriteRoute,
+              );
+            },
+            child: Icon(
+              Icons.favorite,
+              size: 30.0,
+              color: navBar == NavbarEnums.favourite
+                  ? Colors.green
+                  : Colors.black26,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                notificationRoute,
+              );
+            },
+            child: Icon(
+              Icons.notifications,
+              size: 30.0,
+              color: navBar == NavbarEnums.notification
+                  ? Colors.green
+                  : Colors.black26,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                profileRoute,
+              );
+            },
+            child: Icon(
+              Icons.person,
+              size: 30.0,
+              color:
+                  navBar == NavbarEnums.profile ? Colors.green : Colors.black26,
+            ),
+          ),
+        ],
       ),
     );
   }

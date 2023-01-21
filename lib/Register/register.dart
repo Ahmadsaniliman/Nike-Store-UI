@@ -144,7 +144,10 @@ class RegisterScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: const Center(
-                            child: Text('Sign Up',style:TextStyle(color:whiteColor),),
+                            child: Text(
+                              'Register',
+                              style: TextStyle(color: whiteColor),
+                            ),
                           ),
                         ),
                       ),

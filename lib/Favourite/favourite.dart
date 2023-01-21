@@ -2,6 +2,9 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:nike_store_ui/Constants/colors.dart';
+import 'package:nike_store_ui/Constants/enums.dart';
+import 'package:nike_store_ui/Constants/routes.dart';
+import 'package:nike_store_ui/HomePage/home_page.dart';
 import 'package:nike_store_ui/Model/model.dart';
 
 class FavouriteScreen extends StatefulWidget {
@@ -18,16 +21,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: secondWhiteColor,
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
-        items: const [
-          Icon(Icons.add, size: 30),
-          Icon(Icons.list, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
-        ],
-        onTap: (index) {
-          //Handle button tap
-        },
+      bottomNavigationBar: const NavigatorBar(
+        navBar: NavbarEnums.favourite,
       ),
       body: Padding(
         padding: const EdgeInsets.only(
@@ -43,6 +38,11 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(
+                        homeScreenRoute,
+                      );
+                    },
                     child: Container(
                       height: 40.0,
                       width: 40.0,

@@ -23,6 +23,11 @@ class SignInScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                      onBoardingScreenThreeRoute,
+                    );
+                  },
                   child: Container(
                     height: 40.0,
                     width: 40.0,
@@ -114,9 +119,15 @@ class SignInScreen extends StatelessWidget {
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            SizedBox(),
-                            Text('Recovery Password'),
+                          children: [
+                            const SizedBox(),
+                            GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pushNamed(
+                                    forgotPasswordRoute,
+                                  );
+                                },
+                                child: const Text('Recovery Password')),
                           ],
                         ),
                       ),
