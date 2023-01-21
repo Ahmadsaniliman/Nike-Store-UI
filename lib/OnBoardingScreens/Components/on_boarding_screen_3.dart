@@ -87,7 +87,7 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).pushNamed(
-                          homeScreenRoute,
+                          loginRoute,
                         );
                         setState(() {
                           ChangeRoller(index: _index);

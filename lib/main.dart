@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_store_ui/Constants/colors.dart';
 import 'package:nike_store_ui/Constants/routes.dart';
 import 'package:nike_store_ui/Details/details.dart';
 import 'package:nike_store_ui/Favourite/favourite.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const SearchScreen(),
+      home: const HomePage(),
       routes: {
         homeScreenRoute: (context) => const HomeScreen(),
         registerRoute: (context) => const RegisterScreen(),
@@ -43,6 +44,42 @@ class MyApp extends StatelessWidget {
         profileRoute: (context) => const ProfileScreen(),
         detailsRoute: (context) => const DetailsPage(),
       },
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: primaryColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 300.0),
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/icons/Vector (10).png',
+              ),
+              const SizedBox(height: 10.0),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(
+                    onBoardingScreenOneRoute,
+                  );
+                },
+                child: Image.asset(
+                  'assets/images/NIke (1).png',
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
