@@ -64,7 +64,7 @@ class ProfileScreen2 extends StatelessWidget {
                   width: 100.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(40.0),
-                    color: primaryColor,
+                    // color: primaryColor,
                   ),
                   child: Image.asset(
                     'assets/images/Rectangle 382.png',

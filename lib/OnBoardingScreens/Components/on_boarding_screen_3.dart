@@ -14,6 +14,8 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
   @override
   Widget build(BuildContext context) {
     // int _index = 2;
+    // int index = 2;
+    int currentOne = 2;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -72,7 +74,10 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
                     children: [
                       ...List.generate(
                         3,
-                        (index) => ChangeRoller(index: index),
+                        (index) => ChangeRoller(
+                          currentOne: currentOne,
+                          index: index,
+                        ),
                       ),
                     ],
                   ),
@@ -89,9 +94,6 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
                         Navigator.of(context).pushNamed(
                           loginRoute,
                         );
-                        setState(() {
-                          const ChangeRoller(index: 0);
-                        });
                       },
                       child: Container(
                         height: 50.0,

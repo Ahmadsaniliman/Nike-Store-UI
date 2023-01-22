@@ -10,9 +10,10 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  int index = 0;
+  int currentOne = 0;
   @override
   Widget build(BuildContext context) {
-    List<int> _index = [0, 1, 2];
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -59,6 +60,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       ...List.generate(
                         3,
                         (index) => ChangeRoller(
+                          currentOne: currentOne,
                           index: index,
                         ),
                       ),
@@ -77,7 +79,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           onBoardingScreenTwoRoute,
                         );
                         setState(() {
-                          ChangeRoller(index: _index[0]);
+                          index = 1;
+                          currentOne = 1;
                         });
                       },
                       child: Container(
@@ -107,18 +110,21 @@ class ChangeRoller extends StatelessWidget {
   const ChangeRoller({
     Key? key,
     required this.index,
+    required this.currentOne,
   }) : super(key: key);
   final int index;
-  final selectedOne = 0;
+  final int currentOne;
+
+//   final OnBoardingEnums selectedOnBoard;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 10.0),
       height: 6.0,
-      width: 25.0,
+      width: currentOne == index ? 35.0 : 20.0,
       decoration: BoxDecoration(
-        color: selectedOne == index ? Colors.black26 : Colors.yellow,
+        color: currentOne == index ? Colors.yellow : Colors.black26,
         borderRadius: BorderRadius.circular(20.0),
       ),
     );

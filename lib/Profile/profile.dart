@@ -51,8 +51,8 @@ class ProfileScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 30.0),
                 child: Container(
-                  height: 100.0,
-                  width: 100.0,
+                  height: 120.0,
+                  width: 120.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.0),
                     // image: const DecorationImage(
@@ -63,12 +63,12 @@ class ProfileScreen extends StatelessWidget {
                     // fit: StackFit.loose,
                     children: [
                       Image.asset(
-                        'assets/images/liman.jpg',
+                        'assets/images/Ellipse 22.png',
                         fit: BoxFit.cover,
                       ),
                       Positioned(
-                        bottom: 0,
-                        right: 0,
+                        bottom: 30,
+                        right: 30,
                         child: Container(
                           height: 30.0,
                           width: 30.0,
@@ -76,7 +76,11 @@ class ProfileScreen extends StatelessWidget {
                             borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(15.0),
                             ),
-                            color: secondaryColor,
+                            // color: secondaryColor,
+                          ),
+                          child: const Icon(
+                            Icons.camera_alt,
+                            color: whiteColor,
                           ),
                         ),
                       ),
@@ -129,31 +133,27 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 8.0,
-                        bottom: 20.0,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          SizedBox(),
-                          Text('Recovery Password'),
-                        ],
-                      ),
-                    ),
+
                     // Text
-                    Container(
-                      height: 50.0,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'Save Now',
-                          style: TextStyle(color: whiteColor),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed(profileRoute);
+                        },
+                        child: Container(
+                          height: 50.0,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'Save Now',
+                              style: TextStyle(color: whiteColor),
+                            ),
+                          ),
                         ),
                       ),
                     ),

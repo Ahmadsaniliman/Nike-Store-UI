@@ -4,7 +4,6 @@ import 'package:nike_store_ui/Constants/enums.dart';
 import 'package:nike_store_ui/Constants/routes.dart';
 import 'package:nike_store_ui/HomePage/drawer.dart';
 import 'package:nike_store_ui/Model/model.dart';
-// import 'package:nike_sneaker_store_app/';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,8 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-//      int _page = 0;
-//   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   int selectedOne = 0;
   int selectedNav = 0;
   @override
@@ -40,211 +37,213 @@ class _HomeScreenState extends State<HomeScreen> {
             left: 20.0,
             right: 20.0,
           ),
-          child: Column(
-            children: [
-              GestureDetector(
-                  onTap: () {
-                    const Drawwer();
-                  },
-                  child: Image.asset('assets/images/Group 1000000742.png')),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 20.0,
-                  bottom: 10.0,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 60.0,
-                      width: 250,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.white,
-                      ),
-                      child: const TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Looking For Shoes',
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: 15.0,
-                            horizontal: 15.0,
-                          ),
-                          prefixIcon: Icon(Icons.search),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 50.0,
-                      width: 50,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.blue,
-                      ),
-                      child: Image.asset('assets/images/sliders.png'),
-                    ),
-                  ],
-                ),
-              ),
-              //
-              //
-              //
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Select Category',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                GestureDetector(
+                    onTap: () {
+                      const Drawwer();
+                    },
+                    child: Image.asset('assets/images/Group 1000000742.png')),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 20.0,
+                    bottom: 10.0,
                   ),
-                  SizedBox(
-                    height: 50,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: textCategory.length,
-                      itemBuilder: (context, index) => GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedOne = index;
-                          });
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(
-                            right: 20.0,
-                            top: 10.0,
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 10.0,
-                            horizontal: 15.0,
-                          ),
-                          height: 40,
-                          // width: 70.0,
-                          decoration: BoxDecoration(
-                            color: selectedOne == index
-                                ? Colors.blue
-                                : Colors.white,
-                            borderRadius: BorderRadius.circular(10.0),
-                            border: Border.all(),
-                          ),
-                          child: Center(
-                            child: Text(
-                              textCategory[index],
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 60.0,
+                        width: 250,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.white,
+                        ),
+                        child: const TextField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Looking For Shoes',
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 15.0,
+                              horizontal: 15.0,
                             ),
+                            prefixIcon: Icon(Icons.search),
                           ),
                         ),
                       ),
-                    ),
+                      Container(
+                        height: 50.0,
+                        width: 50,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.blue,
+                        ),
+                        child: Image.asset('assets/images/sliders.png'),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              //
-              //
-              //
-              //
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Column(
+                ),
+                //
+                //
+                //
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Popular Shoes',
-                          style: TextStyle(
-                            fontSize: 15.0,
-                          ),
-                        ),
-                        Text(
-                          'See all',
-                          style: TextStyle(
-                            color: Colors.blue,
-                          ),
-                        ),
-                      ],
+                    const Text(
+                      'Select Category',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     SizedBox(
-                      height: 200.0,
+                      height: 50,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: popularProducts.length,
-                        itemBuilder: (context, index) => PopularProducts(
-                          product: popularProducts[index],
+                        itemCount: textCategory.length,
+                        itemBuilder: (context, index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedOne = index;
+                            });
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(
+                              right: 20.0,
+                              top: 10.0,
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 10.0,
+                              horizontal: 15.0,
+                            ),
+                            height: 40,
+                            // width: 70.0,
+                            decoration: BoxDecoration(
+                              color: selectedOne == index
+                                  ? Colors.blue
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(10.0),
+                              border: Border.all(),
+                            ),
+                            child: Center(
+                              child: Text(
+                                textCategory[index],
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'New Arrivals',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'See all',
-                          style: TextStyle(color: Colors.blue),
-                        ),
-                      ],
-                    ),
-                  ),
-                  //
-                  SizedBox(
-                    height: 110.0,
-                    width: double.infinity,
-                    child: Stack(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.only(
-                            top: 20.0,
-                            left: 20.0,
-                          ),
-                          height: 90.0,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(
-                              15.0,
+                //
+                //
+                //
+                //
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            'Popular Shoes',
+                            style: TextStyle(
+                              fontSize: 15.0,
                             ),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                'Summer Sale',
-                                style: TextStyle(fontSize: 13.0),
-                              ),
-                              const SizedBox(height: 5.0),
-                              Image.asset('assets/images/15% OFF.png'),
-                            ],
+                          Text(
+                            'See all',
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 200.0,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: popularProducts.length,
+                          itemBuilder: (context, index) => PopularProducts(
+                            product: popularProducts[index],
                           ),
                         ),
-                        Positioned(
-                          top: -20,
-                          right: 0,
-                          child: Image.asset(
-                            'assets/images/Spring_prev_ui 1.png',
-                            width: 150.0,
-                          ),
-                        ),
-                        Positioned(
-                          top: 30.0,
-                          right: 110.0,
-                          child: Image.asset('assets/images/Misc_06.png'),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ],
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            'New Arrivals',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'See all',
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //
+                    SizedBox(
+                      height: 110.0,
+                      width: double.infinity,
+                      child: Stack(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(
+                              top: 20.0,
+                              left: 20.0,
+                            ),
+                            height: 90.0,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(
+                                15.0,
+                              ),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Summer Sale',
+                                  style: TextStyle(fontSize: 13.0),
+                                ),
+                                const SizedBox(height: 5.0),
+                                Image.asset('assets/images/15% OFF.png'),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            top: -20,
+                            right: 0,
+                            child: Image.asset(
+                              'assets/images/Spring_prev_ui 1.png',
+                              width: 150.0,
+                            ),
+                          ),
+                          Positioned(
+                            top: 30.0,
+                            right: 110.0,
+                            child: Image.asset('assets/images/Misc_06.png'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -311,7 +310,7 @@ class NavigatorBar extends StatelessWidget {
           GestureDetector(
             onTap: () {
               Navigator.of(context).pushNamed(
-                profileRoute,
+                profile1Route,
               );
             },
             child: Icon(

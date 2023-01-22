@@ -4,3 +4,8 @@ enum NavbarEnums {
   profile,
   notification,
 }
+enum OnBoardingEnums {
+  onBoardOne,
+  onBoardTwo,
+  onBoardThree,
+}
