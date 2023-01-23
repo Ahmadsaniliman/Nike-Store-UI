@@ -134,10 +134,13 @@ class MyCartScreen extends StatelessWidget {
                         height: 100.0,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0),
-                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(25.0),
+                          // color: primaryColor,
                         ),
-                        //   child: Image.asset('assets/images/Rectangle 4231.png'),
+                        child: Image.asset(
+                          'assets/images/download (3).jfif',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       const SizedBox(height: 15.0),
                       const Text('Payment Method'),
