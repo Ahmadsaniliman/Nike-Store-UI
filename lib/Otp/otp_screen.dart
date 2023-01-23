@@ -61,7 +61,14 @@ class OtperificationScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20.0),
-
+              const Text(
+                'OTP Code',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 10.0),
               const OtpFormField(),
 
               Padding(
@@ -87,7 +94,15 @@ class OtperificationScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
+              const SizedBox(height: 10.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text('Resend code to'),
+                  Text('00:30'),
+                ],
+              ),
             ],
           ),
         ),

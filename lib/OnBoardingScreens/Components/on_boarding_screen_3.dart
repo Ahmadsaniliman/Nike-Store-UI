@@ -28,9 +28,9 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
               child: Image.asset('assets/icons/Vector.png'),
             ),
             Positioned(
-              top: 100.0,
+              top: 20.0,
               //   left: 30,
-              child: Image.asset('assets/images/Spring_prev_ui 1.png'),
+              child: Image.asset('assets/images/Aire Jordan Nike.png'),
             ),
             Positioned(
               top: 100.0,
