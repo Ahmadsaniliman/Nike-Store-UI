@@ -118,6 +118,7 @@ class RegisterScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: const TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             suffixIcon: Icon(Icons.visibility_off),
